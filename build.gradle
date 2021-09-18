@@ -1,0 +1,32 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.5.20'
+}
+
+group "io.pemassi.kotlin.extensions"
+version "1.0.2"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //Kotlin Libs
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib'
+    implementation 'org.jetbrains.kotlin:kotlin-reflect'
+
+    //Slf4j
+    compileOnly 'org.slf4j:slf4j-api:1.7.32'
+    testImplementation 'org.slf4j:slf4j-api:1.7.32'
+
+    //Gson
+    compileOnly 'com.google.code.gson:gson:2.8.5'
+    testImplementation 'com.google.code.gson:gson:2.8.5'
+
+    //Test Libs
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.4.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}
