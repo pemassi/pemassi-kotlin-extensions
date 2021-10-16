@@ -1,10 +1,10 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.5.20'
+    id 'org.jetbrains.kotlin.jvm' version '1.5.31'
     id 'maven-publish'
 }
 
 group "io.pemassi.kotlin.extensions"
-version "1.0.3"
+version "1.0.4"
 
 repositories {
     mavenCentral()
@@ -12,19 +12,25 @@ repositories {
 
 dependencies {
     //Kotlin Libs
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib'
-    implementation 'org.jetbrains.kotlin:kotlin-reflect'
+    compileOnly 'org.jetbrains.kotlin:kotlin-stdlib'
+    testImplementation 'org.jetbrains.kotlin:kotlin-stdlib'
+    compileOnly 'org.jetbrains.kotlin:kotlin-reflect'
+    testImplementation 'org.jetbrains.kotlin:kotlin-reflect'
 
     //Slf4j
     compileOnly 'org.slf4j:slf4j-api:1.7.32'
     testImplementation 'org.slf4j:slf4j-api:1.7.32'
 
     //Gson
-    compileOnly 'com.google.code.gson:gson:2.8.5'
-    testImplementation 'com.google.code.gson:gson:2.8.5'
+    compileOnly 'com.google.code.gson:gson:2.8.8'
+    testImplementation 'com.google.code.gson:gson:2.8.8'
+
+    //Spring Libs
+    compileOnly 'org.springframework:spring-context:5.3.9'
+    testImplementation 'org.springframework:spring-context:5.3.9'
 
     //Test Libs
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.4.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }
 

@@ -13,9 +13,9 @@ fun ByteArray.hashWithSHA256(): ByteArray = this.hash("SHA-256")
  */
 fun ByteArray.hashWithMD5(): ByteArray = this.hash("MD5")
 
-fun ByteArray.hash(algorithm: String): ByteArray = MessageDigest.getInstance(algorithm).digest()
+fun ByteArray.hash(algorithm: String): ByteArray = MessageDigest.getInstance(algorithm).digest(this)
 
-fun ByteArray.hash(algorithm: String, provider: String): ByteArray = MessageDigest.getInstance(algorithm, provider).digest()
+fun ByteArray.hash(algorithm: String, provider: String): ByteArray = MessageDigest.getInstance(algorithm, provider).digest(this)
 
 /**
  * Do hash with SHA256
@@ -26,7 +26,7 @@ fun ByteArray.hash(algorithm: String, provider: String): ByteArray = MessageDige
 fun String.hashWithSHA256(
     charset: Charset = Charset.defaultCharset(),
     isUpperCase: Boolean = true,
-): String = this.toByteArray(charset).hashWithSHA256().encodeHexString(isUpperCase = isUpperCase)
+): String = this.hash("SHA-256")
 
 /**
  * Do hash with MD5
@@ -37,4 +37,17 @@ fun String.hashWithSHA256(
 fun String.hashWithMD5(
     charset: Charset = Charset.defaultCharset(),
     isUpperCase: Boolean = true,
-): String = this.toByteArray(charset).hashWithMD5().encodeHexString(isUpperCase = isUpperCase)
+): String = this.hash("MD5")
+
+fun String.hash(
+    algorithm: String,
+    charset: Charset = Charset.defaultCharset(),
+    isUpperCase: Boolean = true,
+): String = this.toByteArray(charset).hash(algorithm).encodeHexString(isUpperCase = isUpperCase)
+
+fun String.hash(
+    algorithm: String,
+    provider: String,
+    charset: Charset = Charset.defaultCharset(),
+    isUpperCase: Boolean = true,
+): String = this.toByteArray(charset).hash(algorithm, provider).encodeHexString(isUpperCase = isUpperCase)

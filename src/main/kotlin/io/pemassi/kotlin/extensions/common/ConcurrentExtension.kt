@@ -5,7 +5,7 @@ import java.util.concurrent.ExecutionException
 import java.util.concurrent.TimeUnit
 
 fun <T: Any> CompletableFuture<T>.getResult(timeout: Long = 10, timeUnit: TimeUnit = TimeUnit.SECONDS) : T
-{
+    {
     try
     {
         return this.get(timeout, timeUnit)
