@@ -96,7 +96,7 @@ private fun hexStringToByteArray(str: String): ByteArray {
     check(str.length % 2 == 0) { "Must have an even length" }
 
     val temp = ByteArray(str.length / 2)
-    for(i in 0..str.length step 2)
+    for(i in str.indices step 2)
     {
         temp[i / 2] = (
                 (str[i].digitToInt(16) shl 4) + (str[i + 1].digitToInt(16))
