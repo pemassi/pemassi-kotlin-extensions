@@ -11,10 +11,10 @@ val globalPrettyGson: Gson by lazy {
     GsonBuilder().setPrettyPrinting().create()
 }
 
-fun <R : Any> R.toJson(): String {
-    return globalGson.toJson(this)
+fun <R : Any> R.toJson(gson: Gson = globalGson): String {
+    return gson.toJson(this)
 }
 
-inline fun <reified T> String.fromJson(): T {
-    return globalGson.fromJson(this, T::class.java)
+inline fun <reified T> String.fromJson(gson: Gson = globalGson): T {
+    return gson.fromJson(this, T::class.java)
 }

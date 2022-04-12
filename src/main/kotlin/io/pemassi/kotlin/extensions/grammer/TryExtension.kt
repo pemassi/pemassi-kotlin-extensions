@@ -3,18 +3,19 @@ package io.pemassi.kotlin.extensions.grammer
 fun <T> tryOrDefault(defaultValue: T, f: () -> T): T {
     return try {
         f()
-    } catch (e: Exception) {
+    } catch (e: Throwable) {
         defaultValue
     }
 }
 
-fun tryOrIgnore(printException: Boolean = false, f: () -> Unit) {
+fun tryOrIgnore(printException: Boolean = true, f: () -> Unit) {
     try
     {
         f()
     }
-    catch(e: Exception)
+    catch(e: Throwable)
     {
-        e.printStackTrace()
+        if(printException)
+            e.printStackTrace()
     }
 }

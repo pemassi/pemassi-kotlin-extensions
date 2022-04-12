@@ -4,7 +4,7 @@ plugins {
 }
 
 group "io.pemassi.kotlin.extensions"
-version "1.0.8"
+version "1.0.9"
 
 repositories {
     mavenCentral()
@@ -41,7 +41,6 @@ test {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-
             from components.java
         }
     }

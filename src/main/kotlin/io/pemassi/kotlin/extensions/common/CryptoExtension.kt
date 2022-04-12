@@ -9,6 +9,11 @@ import java.security.MessageDigest
 fun ByteArray.hashWithSHA256(): ByteArray = this.hash("SHA-256")
 
 /**
+ * Do hash with SHA256
+ */
+fun ByteArray.hashWithSHA512(): ByteArray = this.hash("SHA-512")
+
+/**
  * Do hash with MD5
  */
 fun ByteArray.hashWithMD5(): ByteArray = this.hash("MD5")
@@ -27,6 +32,17 @@ fun String.hashWithSHA256(
     charset: Charset = Charset.defaultCharset(),
     isUpperCase: Boolean = true,
 ): String = this.hash("SHA-256")
+
+/**
+ * Do hash with SHA512
+ *
+ * @param isUpperCase Default is true, if it is true, return upper case, otherwise, return lower case.
+ * @return The result will be hex string.
+ */
+fun String.hashWithSHA512(
+    charset: Charset = Charset.defaultCharset(),
+    isUpperCase: Boolean = true,
+): String = this.hash("SHA-512")
 
 /**
  * Do hash with MD5

@@ -12,18 +12,3 @@ fun <T : Any> Optional<T>.toNullable(): T? = this.orElse(null)
  */
 fun <T : Any> T?.toOptional(): Optional<T> = Optional.ofNullable(this)
 
-/**
- * Check the object is null, if it is null will call handler
- * and then return self.
- */
-inline fun <T> T?.guard(block: () -> Unit): T {
-    if (this == null)
-    {
-        block()
-        throw NullPointerException("The object is null (Guard).")
-    }
-    else
-    {
-        return this
-    }
-}

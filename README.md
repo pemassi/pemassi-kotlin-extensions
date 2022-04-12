@@ -18,6 +18,6 @@ allprojects {
 And add next dependencies in the build.gradle of the module:
 ```gradle
 dependencies {
-    implementation 'com.github.pemassi:pemassi-kotlin-extensions:1.0.5'
+    implementation 'com.github.pemassi:pemassi-kotlin-extensions:{version}'
 }
 ```

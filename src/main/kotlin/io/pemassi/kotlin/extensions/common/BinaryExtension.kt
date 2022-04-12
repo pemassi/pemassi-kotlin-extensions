@@ -25,7 +25,7 @@ private val hexToBCDMap = hashMapOf(
     "f" to "1111"
 )
 
-fun String.encodeBinaryString(): String
+fun String.encodeBCD(): String
 {
     val buffer = StringBuffer()
     for(c in this)
