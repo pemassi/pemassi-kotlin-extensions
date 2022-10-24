@@ -118,8 +118,6 @@ fun String.firstHalfMasking(maskingChar: Char = '*') : String
     val start = 0
     val end = ceil(length / 2.0).toInt()
 
-    val test = 1.floorDiv()
-
     return this.masking(start, end, maskingChar)
 }
 
