@@ -4,6 +4,9 @@
 
 Useful Kotlin Extension Set
 
+## Example
+See the [Wiki](https://github.com/pemassi/pemassi-kotlin-extensions/wiki)
+
 ## Setup
 Add the JitPack repository in your build.gradle (top level module):
 ```gradle
